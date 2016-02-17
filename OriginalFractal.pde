@@ -5,19 +5,24 @@ public void setup() {
 }
 
 public void draw() {
-
-	Fractal(200, 200, 100);
+	for (int i = 40; i<360; i+=10) {
+		rotate(-PI/i);
+		stroke(i/2+25);
+		Fractal(100, 250, 200);
+	}
 }
 
 public void Fractal(int x, int y, int len) {
 		noFill();
-		stroke(255);
+		//stroke(255);
 		ellipse(x, y, len, len);
 		rect(x+len/2, y+len/2, len/2, len/2);
 		rect(x+len/2, y-len, len/2, len/2);
 		rect(x-len, y+len/2, len/2, len/2);
+//		rect(x-len, y-len, len/2, len/2);
 
 	if (len >= 20) {
 		Fractal(x+len/2, y, len/2);
+		Fractal(x, y+len/2, len/2);
 	}
 }

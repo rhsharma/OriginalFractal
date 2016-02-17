@@ -4,6 +4,7 @@ public void setup() {
 	background(0);
 }
 
+
 public void draw() {
 	for (int i = 40; i<360; i+=10) {
 		rotate(-PI/i);
@@ -12,14 +13,13 @@ public void draw() {
 	}
 }
 
+
 public void Fractal(int x, int y, int len) {
 		noFill();
-		//stroke(255);
 		ellipse(x, y, len, len);
 		rect(x+len/2, y+len/2, len/2, len/2);
 		rect(x+len/2, y-len, len/2, len/2);
 		rect(x-len, y+len/2, len/2, len/2);
-//		rect(x-len, y-len, len/2, len/2);
 
 	if (len >= 20) {
 		Fractal(x+len/2, y, len/2);
